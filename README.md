@@ -56,7 +56,7 @@ Este comando crea una nueva rama **local** llamada dev y a la vez mueve nuestro 
 
 2. Luego utilizar el comando:
 
-        git pull dev
+        git pull origin dev
 
 Este comando descarga los archivos que se encuentran en la rama **remota** dev **en este momento**. Este proceso es a veces llamado "pulear".
 
