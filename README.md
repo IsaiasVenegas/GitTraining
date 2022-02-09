@@ -42,7 +42,7 @@ Y listo! El repositorio ha sido descargado en tu computador, creando una **versi
 ## Tutorial 2: Cambiar de rama
 Como en el ejemplo mencionado anteriormente, los proyectos tienden a implementar nuevas funciones (o *features*) a medida que van creciendo.
 
-Las ramas de Git proveen una forma segura de implementar estos cambios, ya que cada rama se encuentra asilada de las otras y por tanto no comprometen al repositorio principal. Para que esto tenga sentido, Git tiene un puntero llamado **HEAD**, el cuál apuntará a una rama y contenido en específico.
+Las ramas de Git proveen una forma segura de implementar estos cambios, ya que cada rama se encuentra aislada de las otras y por tanto no comprometen al repositorio principal. Para que esto tenga sentido, Git tiene un puntero llamado **HEAD**, el cuál apuntará a una rama en específico.
 
 Cada vez que se crea una nueva rama, esta se basa en una ya existente, permitiendo hacer las modificaciones deseadas al contenido seleccionado.
 
@@ -58,7 +58,7 @@ Este comando crea una nueva rama **local** llamada dev y a la vez mueve nuestro 
 
         git pull dev
 
-Este comando descarga los archivos que se encuentran en la rama **remota** dev **en este momento**.
+Este comando descarga los archivos que se encuentran en la rama **remota** dev **en este momento**. Este proceso es aveces llamado "pulear".
 
 Y y está! ahora nuestra versión local se encuentra en una nueva rama y está actualizada.
 
