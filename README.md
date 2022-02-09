@@ -14,7 +14,7 @@ Las instrucciones de instalación para **Windows** son las siguientes:
 3. Abrir el símbolo del sistema utilizando las teclas *Windows + X* de tu teclado, luego seleccionar *Windows PowerShell*.
 4. Configurar Git utilizando el siguiente comando, reemplazando los datos con la información asociada a tu cuenta Github:
 
-    git config --global user.name "John Smith" git config --global user.email "eparis@atlassian.com"
+        git config --global user.name "John Smith" git config --global user.email "eparis@atlassian.com"
 
 ## Tutorial 1: Clonar un repositorio
 Github es un repositorio online gratuito que permite gestionar proyectos y controlar versiones de código. 
