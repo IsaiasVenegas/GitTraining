@@ -23,21 +23,48 @@ Un repositorio es la ubicación o ruta en la que se almacena toda la informació
 
 Hace algún tiempo, Github realizó mejoras de seguridad y con ello ahora es necesario una contraseña "adicional" cada vez que se desee realizar una acción sobre un repositorio. La forma más sencilla es creando un *Personal access token*, el cual asociará una cuenta Github con uno o más computadores.
 
-Para crearlo, se debe visitar la página [Developer settings](https://github.com/settings/tokens) de Github clickeando sobre la imágen de perfil, seguido de *Settings* y *Developer settings*. Una vez allí, presionar el botón *Generate new token* y rellenar el formulario, seleccionando todas las casillas de **repo**. Se recomienda anotar el sistema operativo del computador junto con el utilizador (por ejemplo "Windows 10 - Computador Acer") y una fecha de expiración, ya que éste método es potencialmente peligroso. Una vez creado el token, copiar el código que comienza con "ghp_" y guardarlo para el paso 4.
+Para crearlo, se debe visitar la página [Developer settings](https://github.com/settings/tokens) de Github clickeando sobre la imágen de perfil, seguido de *Settings* y *Developer settings*. Una vez allí, presionar el botón *Generate new token* y rellenar el formulario, seleccionando todas las casillas de **repo**. Se recomienda anotar el sistema operativo del computador junto con el utilizador (por ejemplo "Windows 10 - Computador Acer") y una fecha de expiración, ya que éste método es potencialmente peligroso. Una vez creado el token, copiar el código que comienza con "ghp_" y guardarlo para el paso número 4.
 
-1. Visitar el repositorio que se quiere clonar. En nuestro caso, el actual repositorio.
+1. Visitar el repositorio que se quiere clonar. En nuestro caso, el repositorio actual.
 2. Presionar el botón verde *Code* y copiar la dirección web que comienza con "https".
 3. Abrir el símbolo del sistema y navegar hasta la carpeta *Documents*. En Windows, por defecto se comienza en "C:\Users\nombreUsuario" por lo que basta acceder escribiendo el comando:
-
-    cd .\Documents\
+        
+        cd .\Documents\
   
 4. Una vez dentro, escribir el comando:
   
-    git clone direcciónURLdelRepositorio
+        git clone direcciónURLdelRepositorio
   
 5. Ingresar el nombre de usuario y el token generado previamente.
 
-Y listo! El repositorio ha sido descargado en tu computador, creando una **versión local**. Este proceso es también llamado clonación.
+Y listo! El repositorio ha sido descargado en tu computador, creando una **versión local**. Este proceso es llamado clonación.
+
+## Tutorial 2: Cambiar de rama
+Como en el ejemplo mencionado anteriormente, los proyectos tienden a implementar nuevas funciones (o *features*) a medida que van creciendo.
+
+Las ramas de Git proveen una forma segura de implementar estos cambios, ya que cada rama se encuentra asilada de las otras y por tanto no comprometen al repositorio principal. Para que esto tenga sentido, Git tiene un puntero llamado **HEAD**, el cuál apuntará a una rama y contenido en específico.
+
+Cada vez que se crea una nueva rama, esta se basa en una ya existente, permitiendo hacer las modificaciones deseadas al contenido seleccionado.
+
+Con Github es fácil ver la cantidad de ramas existentes en un repositorio. En la parte de arriba, a la izquierda, podrás notar un botón con un ícono y un título que dice **main** (que es la rama actual). Al presionarlo, se desplegarán todas las ramas activas de este repositorio. Vamos a cambiarnos a la rama **dev**.
+
+1. En el símbolo del sistema, ubicados dentro de la carpeta del proyecto, escribir:
+
+        git checkout -b dev
+
+Este comando crea una nueva rama **local** llamada dev y a la vez mueve nuestro HEAD a ella. Se recomienda utilizar el nombre de la rama remota (osea, la que se encuentra en el repositorio) para la rama local.
+
+2. Luego utilizar el comando:
+
+        git pull dev
+
+Este comando descarga los archivos que se encuentran en la rama **remota** dev **en este momento**.
+
+Y y está! ahora nuestra versión local se encuentra en una nueva rama y está actualizada.
+
+## Tutorial 3: Hacer cambios
+Si estás viendo este mensaje, es por que aún no cuentas con los archivos de la rama remota dev. Repite el tutorial anterior y vuelve a abrir este archivo README.txt.
+
 
 ## Fuentes
 
@@ -45,4 +72,7 @@ Parte de esta información ha sido recuperada de los sitios web siguientes:
 - [Instalación de Git](https://www.atlassian.com/es/git/tutorials/install-git)
 - [How to: Clone GIT Repo Using Personal Access Token](https://www.shanebart.com/clone-repo-using-token/)
 - [¿Qué es GITHUB y para qué sirve?](https://www.webempresa.com/hosting/que-es-github.html)
+- [Git Checkout](https://www.atlassian.com/es/git/tutorials/using-branches/git-checkout)
+- [What is a Git HEAD?](https://careerkarma.com/blog/what-is-a-git-head/)
+- [git pull](https://www.atlassian.com/es/git/tutorials/syncing/git-pull)
 
