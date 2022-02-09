@@ -58,7 +58,7 @@ Este comando crea una nueva rama **local** llamada dev y a la vez mueve nuestro 
 
         git pull dev
 
-Este comando descarga los archivos que se encuentran en la rama **remota** dev **en este momento**. Este proceso es aveces llamado "pulear".
+Este comando descarga los archivos que se encuentran en la rama **remota** dev **en este momento**. Este proceso es a veces llamado "pulear".
 
 Y ya está! ahora nuestra versión local se encuentra en una nueva rama y está actualizada.
 
@@ -82,7 +82,7 @@ Este comando le indica a Git que quieres actualizar el archivo EDITAME.txt **rem
         
 Para entender este comando es necesario explicar lo que es un *commit*. 
 
-Debes saber que Git es utilizado para controlar las versiones de un código. Esto quiere decir que conserva **todos los cambios que han ocurrido**. En Github, puedes ver la línea temporal de una rama presionando el botón *commits* bajo el botón verde *Code*. Cada elemento presente en la lista es un estado llamado commit y dentro de ellos se encuentran los archivos que fueron actualizados en ese momento. Esto quiere decir, que nuestro **HEAD** de Git no sólo apunta a una rama, sino que también a un commit en específico (sí, también puedes moverte entre commits).
+Debes saber que Git es utilizado para controlar las versiones de un código. Esto quiere decir que conserva **todos los cambios que han sido subidos al remoto**. En Github, puedes ver la línea temporal de una rama presionando el botón *commits* bajo el botón verde *Code*. Cada elemento presente en la lista es un estado llamado commit y dentro de ellos se encuentran los archivos que fueron actualizados en ese momento. Esto quiere decir, que nuestro **HEAD** de Git no sólo apunta a una rama, sino que también a un commit en específico (sí, también puedes moverte entre commits).
 
 Por lo tanto, este comando toma los archivos añadidos en el paso número 2, los "encapsula" en un commit y le agrega un mensaje personalizado.
 
@@ -90,7 +90,7 @@ Por lo tanto, este comando toma los archivos añadidos en el paso número 2, los
 
         git push origin tuNombre
      
-Dónde origin indica que los cambios serán subidos al repositorio y a la rama *tuNombre*. Ya que esta rama es nueva, el comando también creará su versión remota. Este proceso es a veces llamado "pushear".
+Donde *origin* indica que los cambios serán subidos al repositorio y a la rama *tuNombre*. Ya que esta rama es nueva, el comando también creará su versión remota. Este proceso es a veces llamado "pushear".
 
 Se recomienda encarecidamente no hacer push a la rama principal **main**. Generalmente, esta rama estará protegida y en su lugar se utilizarán ramas secundarias (como dev) para recibir los cambios que luego pasarán a la rama principal, utilizando una herramienta llamada *Pull request*. Esta última se encuentra incluida en Github.
 
