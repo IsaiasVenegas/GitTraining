@@ -14,7 +14,7 @@ Las instrucciones de instalación para **Windows** son las siguientes:
 3. Abrir el símbolo del sistema utilizando las teclas *Windows + X* de tu teclado, luego seleccionar *Windows PowerShell*.
 4. Configurar Git utilizando el siguiente comando, reemplazando los datos con la información asociada a tu cuenta Github:
 
-    git config --global user.name "John Smith" git config --global user.email "eparis@atlassian.com"
+        git config --global user.name "John Smith" git config --global user.email "eparis@atlassian.com"
 
 ## Tutorial 1: Clonar un repositorio
 Github es un repositorio online gratuito que permite gestionar proyectos y controlar versiones de código. 
@@ -63,8 +63,53 @@ Este comando descarga los archivos que se encuentran en la rama **remota** dev *
 Y ya está! ahora nuestra versión local se encuentra en una nueva rama y está actualizada.
 
 ## Tutorial 3: Hacer cambios
-Si estás viendo este mensaje, es por que aún no cuentas con los archivos de la rama remota dev. Repite el tutorial anterior y vuelve a abrir este archivo README.txt.
+Hemos llegado a la parte interesante. Ahora cuentas con dos archivos, uno llamado README.txt y el otro llamado EDITAME.txt, el cuál editaremos (obviamente).
 
+Para no modificar la rama remota dev, probaremos lo aprendido creando una nueva rama siguiendo el tutorial número 3. La rama remota a duplicar será dev y el nombre de la rama local será *tuNombre*.
+
+Hecho esto, abriremos el archivo EDITAME.txt con nuestro editor de código preferido (Bloc de notas, ~~Word~~, Visual Studio Code, etc.) y luego:
+
+1. Al final del archivo, reemplazar los comentarios (las lineas que comienzan con "//") con la información solicitada.
+2. Tras esto, abrir el símbolo del sistema y escribir:
+
+        git add EDITAME.txt
+        
+Este comando le indica a Git que quieres actualizar el archivo EDITAME.txt **remoto** con los cambios que has hecho en la versión **local**. Si se tienen múltiples archivos editados y se desean mencionar todos a la vez, es posible hacerlo en un solo comando utilizando un punto en reemplazo del nombre del archivo. Pero si se tienen múltiples archivos editados y sólo se desean actualizar algunos, se tendrá que escribir uno por uno (o utilizar alguna herramienta disponible en el editor de código utilizado).
+
+3. Luego escribir:
+
+        git commit -m 'Actualizar EDITAME.txt'
+        
+Para entender este comando es necesario explicar lo que es un *commit*. 
+
+Debes saber que Git es utilizado para controlar las versiones de un código. Esto quiere decir que conserva **todos los cambios que han ocurrido**. En Github, puedes ver la línea temporal de una rama presionando el botón *commits* bajo el botón verde *Code*. Cada elemento presente en la lista es un estado llamado commit y dentro de ellos se encuentran los archivos que fueron actualizados en ese momento. Esto quiere decir, que nuestro **HEAD** de Git no sólo apunta a una rama, sino que también a un commit en específico (sí, también puedes moverte entre commits).
+
+Por lo tanto, este comando toma los archivos añadidos en el paso número 2, los "encapsula" en un commit y le agrega un mensaje personalizado.
+
+4. Finalmente, escribir:
+
+        git push origin tuNombre
+     
+Dónde origin indica que los cambios serán subidos al repositorio y a la rama *tuNombre*. Ya que esta rama es nueva, el comando también creará su versión remota. Este proceso es a veces llamado "pushear".
+
+Se recomienda encarecidamente no hacer push a la rama principal **main**. Generalmente, esta rama estará protegida y en su lugar se utilizarán ramas secundarias (como dev) para recibir los cambios que luego pasarán a la rama principal, utilizando una herramienta llamada *Pull request*. Esta última se encuentra incluida en Github.
+
+Si deseas practicar más esta parte, repite este tutorial copiando y pegando 2 veces más el último verso del coro y continúa con el paso número 2.
+
+## Problemas usuales
+Git y Github no son sólo utilizados para mantener un control de las versiones del código, también son muy útiles para el trabajo colaborativo. El problema es cuando no existe suficiente comunicación entre el equipo.
+
+### No hacer pull antes de hacer push
+¿Qué sucedería si tu compañero de trabajo actualiza tu rama remota mientras te encuentras trabajando en ella? pues en teoría nada, pues tu trabajas en la versión local. Pero una vez quieras subir tus cambios te encontrarás con un mensaje indicando que existen cambios en la rama de destino.
+
+Para resolver esto, basta con hacer un pull y luego hacer un push.
+
+### Merge conflict
+¿Qué sucedería si tus nuevas lineas de código ocupan la mismas lineas que tu compañero ya editó? (por ejemplo, tu compañero actualizó el EDITAME.txt antes que tú y escribió el último verso mal) pues Git no podrá actualizar tu rama local y te arrojará un mensaje de error, no pudiendo tampoco actualizar la rama remota.
+
+Para solucionar esto, deberás abrir al archivo que cuenta con conflictos y decidir cuál de las dos versiones quieres que se mantengan en el repositorio. En otras palabras, borra las lineas que no estén funcionando.
+
+Se debe tener mucho cuidado para resolver este tipo de conflictos, pues quizás tu compañero resolvió una falla que no se te ha comunicado y tú volverás a agregarla!
 
 ## Fuentes
 
