@@ -60,7 +60,7 @@ Este comando crea una nueva rama **local** llamada dev y a la vez mueve nuestro 
 
 Este comando descarga los archivos que se encuentran en la rama **remota** dev **en este momento**. Este proceso es aveces llamado "pulear".
 
-Y y está! ahora nuestra versión local se encuentra en una nueva rama y está actualizada.
+Y ya está! ahora nuestra versión local se encuentra en una nueva rama y está actualizada.
 
 ## Tutorial 3: Hacer cambios
 Si estás viendo este mensaje, es por que aún no cuentas con los archivos de la rama remota dev. Repite el tutorial anterior y vuelve a abrir este archivo README.txt.
