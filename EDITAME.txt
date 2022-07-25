@@ -8,6 +8,7 @@ que te dio por baluarte el Señor,
 y ese mar que tranquilo te baña
 te promete futuro esplendor.
 Coro
-// Por rellenar
-// Disponible en 
-// https://es.wikipedia.org/wiki/Himno_nacional_de_Chile#Texto_oficial
+    Dulce Patria, recibe los votos
+    con que Chile en tus aras juró
+    que o la tumba serás de los libres
+    o el asilo contra la opresión.
